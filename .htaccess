@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /projectzero/
+RewriteRule ^.htaccess$ - [F] #запрект доступа к .htaccess
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+AddDefaultCharset utf-8
+Options -Indexes
+
+#RewriteRule ^(.*)$ index.php?option=$1 [L,QSA]
+#RewriteRule ^.*view/(.*)$ index.php?option=view&id=$1 [L,QSA]
+#RewriteRule ^main(.*)$ index.php
+RewriteRule ^(.*) index.php?route=$1 [L,QSA]
+#RewriteRule ^(.*) index.php?route=$1 [L,QSA]
+#RewriteRule ^.*view(.*) view/$1 [L,QSA]
